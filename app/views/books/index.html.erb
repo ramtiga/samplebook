@@ -28,7 +28,7 @@
         <td><%= link_to cnt, book_path(book) %></td>
         <td><%= book.title %></td>
         <td><%= book.author %></td>
-        <td><%= book.review %></td>
+        <td><div id="star" review-score="<%= book.review %>"></div></td>
         <td><%= book.description %></td>
         <td><%=l book.created_at %></td>
         <td><%=l book.updated_at %></td>
@@ -52,3 +52,14 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_book_path,
             :class => 'btn btn-primary' %>
+<script>
+$('[id=star]').raty({
+size     : 24,
+starOff: '/assets/star-off.png',
+starOn : '/assets/star-on.png',
+readOnly : true,
+score  : function(){
+  return $(this).attr('review-score');
+}
+});
+</script>
