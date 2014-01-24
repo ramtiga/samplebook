@@ -49,6 +49,7 @@ gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'kaminari'
+gem 'ransack'
 
 group :development do
   gem 'rack-mini-profiler'
